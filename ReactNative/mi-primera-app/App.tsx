@@ -54,3 +54,20 @@ const styles = StyleSheet.create({
     flex: 0.7,
   },
 });
+
+
+tabBarIcon: ({focused, color, size}) => {
+
+                let iconName: any='List';
+
+                if(route.name === 'InicioTab'){
+                    iconName = focused ? 'cube' : 'cube-outline';
+                } else if(route.name === 'PerfilTab'){
+                    iconName = focused ? 'person' : 'person-outline';
+                }
+                return <Ionicons name={iconName} size={size} color={color} />
+              },
+              tabBarActiveTintColor: '#2196F3',
+              tabBarInactiveTintColor: 'gray',
+            
+            })}>
