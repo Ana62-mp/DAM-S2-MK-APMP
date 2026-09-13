@@ -25,8 +25,20 @@ export default function TabNavigator(){
 
             },   
             
-            tabBarActiveTintColor: '#0284c7',   
-            tabBarInactiveTintColor: 'gray', 
+            tabBarActiveTintColor: '#c9363f',
+            tabBarInactiveTintColor: '#707070',
+            tabBarStyle: {
+                backgroundColor: '#ffffff',
+                borderTopColor: '#e3e3e3',
+                height: 70,
+                paddingTop: 8,
+                paddingBottom: 10,
+            },
+            tabBarLabelStyle: {
+                fontSize: 11,
+                fontWeight: '700',
+            },
+            tabBarHideOnKeyboard: true,
         
         })}
         >

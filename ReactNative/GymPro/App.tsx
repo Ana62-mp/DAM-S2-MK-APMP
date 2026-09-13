@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler'; 
-import { NavigationContainer } from '@react-navigation/native'; 
+import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import ChestDetailScreen from './src/screens/ChestDetailScreen';
 import DrawerNavigator from './src/navigators/DrawerNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,7 +14,17 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={{
+      ...DarkTheme,
+      colors: {
+        ...DarkTheme.colors,
+        primary: '#8f1d24',
+        background: '#f7f7f7',
+        card: '#ffffff',
+        text: '#111111',
+        border: '#e3e3e3',
+      },
+    }}>
       <StatusBar style='light'/>
       <Stack.Navigator>
         
@@ -28,7 +38,12 @@ export default function App() {
         <Stack.Screen
           name='ChestDetail'
           component={ChestDetailScreen}
-          options={{title: "Detalle de ejercicio"}}
+          options={{
+            title: "Rutina de pecho",
+            headerStyle: {backgroundColor: '#ffffff'},
+            headerTintColor: '#111111',
+            headerShadowVisible: false,
+          }}
         
         />
 

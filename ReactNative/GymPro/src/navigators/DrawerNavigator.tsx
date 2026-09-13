@@ -12,9 +12,15 @@ export default function DrawerNavigator(){
         <Drawer.Navigator
 
             screenOptions={{
-                headerStyle: {backgroundColor: "#030303"},
-                headerTintColor: "#f0f0f0",
-                drawerActiveTintColor: "#5a1717",
+                headerStyle: {backgroundColor: "#ffffff"},
+                headerTintColor: "#111111",
+                headerShadowVisible: false,
+                drawerStyle: {backgroundColor: '#ffffff'},
+                drawerActiveTintColor: "#ffffff",
+                drawerInactiveTintColor: '#555555',
+                drawerActiveBackgroundColor: '#65151a',
+                drawerItemStyle: {borderRadius: 12, marginHorizontal: 10},
+                drawerLabelStyle: {fontWeight: '700'},
             }}
             >
 
