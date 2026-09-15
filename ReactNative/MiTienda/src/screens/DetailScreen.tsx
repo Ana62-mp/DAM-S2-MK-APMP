@@ -1,25 +1,23 @@
 import { View, Text, Button, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useProducts } from '../context/ProductContext';
 
-export default function DetailScreen() {
-    return (
-        <SafeAreaView style={styles.safeArea}>
-            <View style={styles.container}>
-                <Text style={styles.title}>Detalles del producto</Text>
+export default function DetailScreen({route} : any){
+  const idToView = route.params?.id;
+  const {products} = useProducts();
 
-                <Text style={styles.text}>
-                    Contenido aquí
-                </Text>
+  const product = products.find(p => p.id === idToView);
 
-                <View style={styles.buttonContainer}>
-                    <Button
-                        title="Continuar"
-                        onPress={() => {}}
-                    />
-                </View>
-            </View>
-        </SafeAreaView>
-    )
+  if(!product) return <Text>Producto no encontrado</Text>
+
+  return (
+    <View>
+      <Text>{product.name}</Text>
+      <Text>{product.price.toFixed(2)}</Text>
+      <Text>{product.createdAt}</Text>
+      <Text>{product.descripcion}</Text>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
