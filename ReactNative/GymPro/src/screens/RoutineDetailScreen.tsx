@@ -9,7 +9,7 @@ const exercises = [
   {name: 'Fondos en paralelas', detail: '3 series · 8–12 reps', icon: 'fitness-outline'},
 ];
 
-export default function ChestDetailScreen() {
+export default function RoutineDetailScreen() {
   return (
     <SafeAreaView style={styles.safeArea} edges={['bottom']}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>

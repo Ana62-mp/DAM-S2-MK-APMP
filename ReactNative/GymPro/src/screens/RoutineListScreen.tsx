@@ -1,4 +1,4 @@
-import { Text, Button, View, StyleSheet, ImageBackground, ScrollView } from "react-native";
+import { Text, Button, View, StyleSheet, ImageBackground, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -55,6 +55,10 @@ export default function RoutineListScreen({navigation}:any) {
 
                 <View style={styles.buttonShell}>
                     <Button title="Ver rutina de pecho" color="#8f1d24" onPress={() => navigation.navigate("ChestDetail")} />
+                </View>
+
+                <View style={styles.buttonShell}>
+                    <Button title="Comenzar Rutina" color="#8f1d24" onPress={() => Alert.alert("Estás comenzando la rutina")} />
                 </View>
 
                 <Text style={styles.sectionTitle}>Enfoque de hoy</Text>

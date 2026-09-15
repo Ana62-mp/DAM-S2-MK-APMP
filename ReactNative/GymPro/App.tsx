@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler'; 
 import { DarkTheme, NavigationContainer } from '@react-navigation/native';
-import ChestDetailScreen from './src/screens/ChestDetailScreen';
 import DrawerNavigator from './src/navigators/DrawerNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RoutineDetailScreen from './src/screens/RoutineDetailScreen';
 
 export type RootStackParamList = {
   DrawerNavigator: undefined,
@@ -37,7 +37,7 @@ export default function App() {
 
         <Stack.Screen
           name='ChestDetail'
-          component={ChestDetailScreen}
+          component={RoutineDetailScreen}
           options={{
             title: "Rutina de pecho",
             headerStyle: {backgroundColor: '#ffffff'},

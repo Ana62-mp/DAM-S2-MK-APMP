@@ -26,7 +26,7 @@ export default function DrawerNavigator(){
 
 
             <Drawer.Screen
-                name="Mi Entrenamiento"
+                name="Entrenamiento de Ana"
                 component={TabNavigator}
                 options={{
                     drawerIcon: ({color, size}) => (
