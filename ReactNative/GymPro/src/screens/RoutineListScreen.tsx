@@ -30,7 +30,7 @@ export default function RoutineListScreen({ navigation }: any) {
               <View>
                 <TouchableOpacity
                   onPress={() =>
-                    navigation.navigate("RoutineDetail", { id: item.id })
+                    navigation.navigate("Detail", { id: item.id })
                   }
                 >
                   <Ionicons name="eye" size={24} color="blue" />
