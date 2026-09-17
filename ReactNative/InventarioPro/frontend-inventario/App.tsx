@@ -4,9 +4,9 @@ import {NavigationContainer} from '@react-navigation/native'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
 import { ProductoProvider } from './src/context/ProductoContext';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import HomeScreen from './src/screens/HomeScreen';
 import AddProductsScreen from './src/screens/AddProductsScreen';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -16,14 +16,21 @@ export type RootStackParamList = {
 };
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <ProductoProvider>
         <NavigationContainer>
-          <Tab.Navigator>
+          <StatusBar style="dark" />
+          <Tab.Navigator screenOptions={({ route }) => ({
+            headerShown: false,
+            tabBarActiveTintColor: '#23785e',
+            tabBarInactiveTintColor: '#82958b',
+            tabBarStyle: { backgroundColor: '#fff', borderTopColor: '#e5ece8' },
+            tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
+            tabBarIcon: ({ color, size }) => <Ionicons name={route.name === 'Productos' ? 'cube-outline' : 'add-circle-outline'} size={size} color={color} />,
+          })}>
             <Tab.Screen
               name='Productos'
               component={HomeScreen}

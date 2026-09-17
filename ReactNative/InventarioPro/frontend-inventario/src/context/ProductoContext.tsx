@@ -8,7 +8,7 @@ export type Producto = {
   nombre: string;
   precio: number;
   categoria: string;
-  fotoBase64: string ;
+  fotoBase64?: string | null;
   createdAt: string;
 };
 
@@ -31,7 +31,7 @@ export function ProductoProvider({ children }: { children: ReactNode }) {
 
     const fetchProducts = async () => {
         try {
-            const response = await api.get('/products');
+            const response = await api.get('/productos');
             setProducts(response.data);
         } catch (error) {
             Alert.alert('Error', 'No se pudo conectar con el servidor local');
@@ -46,7 +46,7 @@ export function ProductoProvider({ children }: { children: ReactNode }) {
     const addProduct = async (newProduct: Omit<Producto, 'id' | 'createdAt'>) => {
 
         try {
-            const response = await api.post('/products', newProduct);
+            const response = await api.post('/productos', newProduct);
             setProducts([...products, response.data]);
             return true;
         } catch (error) {
@@ -61,7 +61,7 @@ export function ProductoProvider({ children }: { children: ReactNode }) {
         updatedProduct: Omit<Producto, 'id' | 'createdAt'>
     ) => {
         try {
-            const response = await api.put('/products/${id}', updatedProduct);
+            const response = await api.put(`/productos/${id}`, updatedProduct);
             setProducts(
                 products.map(product =>
                     product.id === id ? response.data : product
@@ -77,7 +77,7 @@ export function ProductoProvider({ children }: { children: ReactNode }) {
 
     const deleteProduct = async (id: number) => {
         try {
-            await api.delete('/products/${id}');
+            await api.delete(`/productos/${id}`);
             setProducts(products.filter(product => product.id !== id));
         } catch (error) {
             Alert.alert('Error', 'No se pudo eliminar el producto');
