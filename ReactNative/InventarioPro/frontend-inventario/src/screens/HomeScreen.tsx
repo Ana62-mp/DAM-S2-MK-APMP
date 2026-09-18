@@ -33,7 +33,7 @@ export default function HomeScreen({ navigation }: any) {
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <View style={styles.card}>
-
+              
                 {item.fotoBase64 ? (
                     <Image
                         source = {{uri: item.fotoBase64}}

@@ -19,5 +19,8 @@ model Producto {
   precio     Float
   categoria  String
   fotoBase64 String? // ¡La clave para las fotos de la cámara!
+  codigoBarras String?
+  latitud    Float?
+  longitud   Float?
   createdAt  DateTime @default(now())
 }

@@ -27,14 +27,20 @@ export const getProductos = async (req: Request, res: Response) => {
 
 export const createProducto = async (req: Request, res: Response) => {
   try {
-    const { nombre, precio, categoria, fotoBase64 } = req.body;
+    const {
+      nombre,
+      precio,
+      categoria,
+      fotoBase64,
+      codigoBarras,
+      latitud,
+      longitud,
+    } = req.body;
 
-    // Validación básica
     if (!nombre || precio === undefined || !categoria) {
       res.status(400).json({
         mensaje: "nombre, precio y categoria son obligatorios",
       });
-
       return;
     }
 
@@ -44,12 +50,15 @@ export const createProducto = async (req: Request, res: Response) => {
         precio: Number(precio),
         categoria,
         fotoBase64: fotoBase64 ?? null,
+        codigoBarras: codigoBarras ?? null,
+        latitud: latitud != null ? Number(latitud) : null,
+        longitud: longitud != null ? Number(longitud) : null,
       },
     });
 
     res.status(201).json(producto);
   } catch (error) {
-    console.error(error);
+    console.error("ERROR AL CREAR PRODUCTO:", error);
 
     res.status(500).json({
       mensaje: "Error al crear el producto",
