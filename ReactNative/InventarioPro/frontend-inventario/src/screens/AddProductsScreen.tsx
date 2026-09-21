@@ -38,7 +38,9 @@ export default function AddProductsScreen({navigation}:any) {
       //le agregamos el prefijo "data:image/jpeg;base64," para que sea reconocida como una imagen
       //(`data:image/jpeg;base64,${resultado.assets[0].base64}`)
       setFotoBase64(`data:image/jpeg;base64,${resultado.assets[0].base64}`);
+      Alert.alert('Exito', 'Foto capturada')
     }
+
   };
 
   const obtenerUbicacion = async() => {
