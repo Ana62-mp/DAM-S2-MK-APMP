@@ -1,0 +1,340 @@
+# ============================================================
+# GITIGNORE
+# React Native / Expo + Node.js + TypeScript + Prisma/PostgreSQL
+# ============================================================
+
+
+# ============================================================
+# NODE / NPM
+# ============================================================
+
+node_modules/
+**/node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.npm/
+.yarn/
+.pnpm-store/
+
+
+# ============================================================
+# VARIABLES DE ENTORNO / SECRETOS
+# ============================================================
+
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Sí permitir archivos de ejemplo
+!.env.example
+!**/.env.example
+
+# Archivos con secretos o credenciales
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+
+
+# ============================================================
+# TYPESCRIPT
+# ============================================================
+
+*.tsbuildinfo
+
+dist/
+**/dist/
+
+build/
+**/build/
+
+out/
+**/out/
+
+
+# ============================================================
+# NODE / BACKEND
+# ============================================================
+
+logs/
+**/logs/
+
+*.log
+
+tmp/
+**/tmp/
+
+temp/
+**/temp/
+
+.cache/
+**/.cache/
+
+
+# ============================================================
+# PRISMA
+# ============================================================
+
+# IMPORTANTE:
+# NO ignorar:
+# prisma/schema.prisma
+# prisma/migrations/
+
+# Prisma Client generado
+src/generated/prisma/
+**/src/generated/prisma/
+
+generated/
+**/generated/
+
+# Archivos temporales Prisma
+prisma/.env
+
+
+# ============================================================
+# BASES DE DATOS LOCALES
+# ============================================================
+
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+
+
+# ============================================================
+# BACKUPS / DUMPS DE POSTGRESQL
+# ============================================================
+
+*.dump
+*.backup
+
+database/*complete*.sql
+database/*data*.sql
+database/*backup*.sql
+database/*dump*.sql
+
+**/database/*complete*.sql
+**/database/*data*.sql
+**/database/*backup*.sql
+**/database/*dump*.sql
+
+# Puedes mantener versionado database-schema.sql
+# porque solo contiene la estructura de la BD.
+
+
+# ============================================================
+# MULTER / ARCHIVOS SUBIDOS
+# ============================================================
+
+uploads/
+**/uploads/
+
+# Permite conservar una carpeta uploads vacía si usas .gitkeep
+!uploads/.gitkeep
+!**/uploads/.gitkeep
+
+
+# ============================================================
+# TEST / COVERAGE
+# ============================================================
+
+coverage/
+**/coverage/
+
+.nyc_output/
+**/.nyc_output/
+
+jest-results/
+test-results/
+
+
+# ============================================================
+# REACT NATIVE / EXPO
+# ============================================================
+
+.expo/
+**/.expo/
+
+.expo-shared/
+**/.expo-shared/
+
+web-build/
+**/web-build/
+
+.expo-cache/
+
+# Exportaciones Expo
+frontend/dist/
+
+# Metro
+.metro-health-check*
+.metro-cache/
+**/.metro-cache/
+
+
+# ============================================================
+# EXPO / EAS
+# ============================================================
+
+.eas/
+
+# Archivos generados para compilaciones
+*.apk
+*.aab
+*.ipa
+
+
+# ============================================================
+# ANDROID
+# ============================================================
+
+android/.gradle/
+**/android/.gradle/
+
+android/build/
+**/android/build/
+
+android/app/build/
+**/android/app/build/
+
+android/local.properties
+**/android/local.properties
+
+*.jks
+*.keystore
+
+# Android Studio
+.externalNativeBuild/
+.cxx/
+
+
+# ============================================================
+# iOS / XCODE
+# ============================================================
+
+ios/Pods/
+**/ios/Pods/
+
+ios/build/
+**/ios/build/
+
+DerivedData/
+
+*.xcuserstate
+xcuserdata/
+
+*.mobileprovision
+
+*.p8
+
+
+# ============================================================
+# EXPO PREBUILD - OPCIONAL
+# ============================================================
+
+# Si trabajas con Expo Managed / Continuous Native Generation
+# y generas android/ios usando `npx expo prebuild`,
+# puedes descomentar estas dos líneas:
+#
+# android/
+# ios/
+#
+# NO las ignores si modificas código nativo manualmente.
+
+
+# ============================================================
+# EDITORES
+# ============================================================
+
+.vscode/
+.idea/
+
+*.sublime-workspace
+*.sublime-project
+
+# Si quieres compartir configuraciones útiles de VS Code,
+# puedes reemplazar .vscode/ por reglas específicas.
+
+
+# ============================================================
+# SISTEMA OPERATIVO
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+
+# ============================================================
+# ARCHIVOS TEMPORALES
+# ============================================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+*.orig
+*.orig.*
+
+
+# ============================================================
+# DEBUG
+# ============================================================
+
+debug/
+**/debug/
+
+*.pid
+*.seed
+*.pid.lock
+
+
+# ============================================================
+# ARCHIVOS GENERADOS
+# ============================================================
+
+.eslintcache
+.stylelintcache
+
+.cache-loader/
+.parcel-cache/
+
+.turbo/
+
+.next/
+
+
+# ============================================================
+# ARCHIVOS GRANDES / EXPORTACIONES
+# ============================================================
+
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+
+# ============================================================
+# FIN
+# ============================================================
