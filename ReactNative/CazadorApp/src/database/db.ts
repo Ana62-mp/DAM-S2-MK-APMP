@@ -1,8 +1,6 @@
-import * as SQLite from "expo-sqlite";
+import { SQLiteDatabase } from "expo-sqlite";
 
-export async function initDatabase() {
-  const db = await SQLite.openDatabaseAsync("cazador.db");
-
+export async function initDatabase(db: SQLiteDatabase) {
   await db.execAsync(`
     CREATE TABLE IF NOT EXISTS registros (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
